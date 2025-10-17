@@ -12,13 +12,23 @@
  */
 
 const containsDuplicate = (nums) => {
-  //write your code here
+  let numAmounts ={};
+  for(let i =0;i<nums.length;i++){
+    let num = nums[i];
+    if(num in numAmounts){
+      numAmounts[num] ++;
+      return true;
+    }else{
+      numAmounts[num] = 1;
+    }
+  }
+  return false;
 };
 
 // Export the function for testing
 module.exports = { containsDuplicate };
 
 // Example usage (commented out to avoid interference with tests)
-// console.log(containsDuplicate([1,2,3,1])); // → true
-// console.log(containsDuplicate([1,2,3,4])); // → false
-// console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2])); // → true
+console.log(containsDuplicate([1,2,3,1])); // → true
+console.log(containsDuplicate([1,2,3,4])); // → false
+console.log(containsDuplicate([1,1,1,3,3,4,3,2,4,2])); // → true
