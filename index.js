@@ -12,17 +12,17 @@
  */
 
 const containsDuplicate = (nums) => {
-  let numAmounts ={};
-  for(let i =0;i<nums.length;i++){
-    let num = nums[i];
-    if(num in numAmounts){
-      numAmounts[num] ++;
-      return true;
+  let numAmounts ={};//makes object to store in numbers and amount of times it shows up
+  for(let i =0;i<nums.length;i++){//for loop to run for number of items in nums length
+    let num = nums[i];//just to better read the element we are at in the array
+    if(num in numAmounts){//checks if the element is already in the object
+      numAmounts[num] ++;//adds to the value of the object
+      return true;//since we know there is a least one pair we can return true
     }else{
-      numAmounts[num] = 1;
+      numAmounts[num] = 1;//adds the key and value to the object since its not in the object
     }
   }
-  return false;
+  return false;//all other cases will return false
 };
 
 // Export the function for testing
